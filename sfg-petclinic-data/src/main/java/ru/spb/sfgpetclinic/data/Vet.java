@@ -1,4 +1,4 @@
-package ru.spb.sfgpetclinic.domain;
+package ru.spb.sfgpetclinic.data;
 
 
 public class Vet extends Person {

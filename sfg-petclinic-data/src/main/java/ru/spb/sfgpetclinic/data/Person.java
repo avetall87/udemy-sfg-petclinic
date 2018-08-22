@@ -1,4 +1,4 @@
-package ru.spb.sfgpetclinic.domain;
+package ru.spb.sfgpetclinic.data;
 
 import lombok.Getter;
 import lombok.Setter;
