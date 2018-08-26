@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Owner extends Person {
+public class Pet extends Person {
 
 }
