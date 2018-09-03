@@ -1,10 +1,12 @@
 package ru.spb.sfgpetclinic.service.map.impl;
 
+import org.springframework.stereotype.Service;
 import ru.spb.sfgpetclinic.data.Owner;
 import ru.spb.sfgpetclinic.service.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMapImpl extends AbstarctMapService<Owner, Long> implements OwnerService {
 
     @Override
@@ -24,7 +26,7 @@ public class OwnerServiceMapImpl extends AbstarctMapService<Owner, Long> impleme
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

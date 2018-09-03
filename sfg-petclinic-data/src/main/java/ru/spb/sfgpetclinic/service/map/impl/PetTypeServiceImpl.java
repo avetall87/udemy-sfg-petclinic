@@ -1,10 +1,12 @@
 package ru.spb.sfgpetclinic.service.map.impl;
 
+import org.springframework.stereotype.Service;
 import ru.spb.sfgpetclinic.data.PetType;
 import ru.spb.sfgpetclinic.service.PetTypeService;
 
 import java.util.Set;
 
+@Service
 public class PetTypeServiceImpl extends AbstarctMapService<PetType, Long> implements PetTypeService {
 
     @Override
@@ -19,7 +21,7 @@ public class PetTypeServiceImpl extends AbstarctMapService<PetType, Long> implem
 
     @Override
     public PetType save(PetType object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

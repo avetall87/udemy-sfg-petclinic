@@ -6,5 +6,23 @@
 </head>
 <body>
     <h1 th:text="'Ветеринары'">stub</h1>
+    <p>
+        <a href="/">На главную</a>
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>Идентифиатор</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vet : ${vets}">
+            <td th:text="${vet.id}"></td>
+            <td th:text="${vet.lastName}"></td>
+            <td th:text="${vet.firstName}"></td>
+        </tr>
+        </tbody>
 </body>
 </html>

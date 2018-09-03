@@ -5,6 +5,25 @@
     <title>Владельцы животных</title>
 </head>
 <body>
-
+<h1 th:text="'Владельцы животных'">stub</h1>
+<p>
+    <a href="/">На главную</a>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>Идентифиатор</th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="owner : ${owners}">
+        <td th:text="${owner.id}"></td>
+        <td th:text="${owner.lastName}"></td>
+        <td th:text="${owner.firstName}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
