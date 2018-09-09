@@ -5,6 +5,8 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        jcenter()
+        maven { url 'http://repo.spring.io/libs-snapshot' }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -23,7 +25,6 @@ subprojects {
 
     bootJar {
         manifest {
-//            attributes 'Start-Class': 'ru.spb.sfgpetclinic.web.SfgPetclinicApplication'
             attributes 'Main-Class': 'ru.spb.sfgpetclinic.web.SfgPetclinicApplication'
         }
     }

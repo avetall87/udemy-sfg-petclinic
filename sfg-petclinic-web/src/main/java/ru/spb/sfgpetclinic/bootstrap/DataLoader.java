@@ -4,10 +4,10 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import ru.spb.sfgpetclinic.data.Owner;
-import ru.spb.sfgpetclinic.data.Vet;
-import ru.spb.sfgpetclinic.service.OwnerService;
-import ru.spb.sfgpetclinic.service.VetService;
+import ru.spb.sfgpetclinicdata.data.Owner;
+import ru.spb.sfgpetclinicdata.data.Vet;
+import ru.spb.sfgpetclinicdata.service.OwnerService;
+import ru.spb.sfgpetclinicdata.service.VetService;
 
 @Component
 public class DataLoader implements CommandLineRunner {

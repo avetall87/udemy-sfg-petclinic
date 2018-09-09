@@ -1,6 +1,6 @@
-package ru.spb.sfgpetclinic.service;
+package ru.spb.sfgpetclinicdata.service;
 
-import ru.spb.sfgpetclinic.data.Owner;
+import ru.spb.sfgpetclinicdata.data.Owner;
 
 public interface OwnerService extends CrudService<Owner, Long> {
     Owner findByLastName(String lastName);

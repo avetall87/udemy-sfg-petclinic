@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(value = {"ru.spb.sfgpetclinic"})
+@ComponentScan(value = {"ru.spb"})
 public class SfgPetclinicApplication {
 
     public static void main(String[] args) {

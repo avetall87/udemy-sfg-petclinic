@@ -1,8 +1,8 @@
-package ru.spb.sfgpetclinic.service.map.impl;
+package ru.spb.sfgpetclinicdata.service.map.impl;
 
 import org.springframework.stereotype.Service;
-import ru.spb.sfgpetclinic.data.PetType;
-import ru.spb.sfgpetclinic.service.PetTypeService;
+import ru.spb.sfgpetclinicdata.data.PetType;
+import ru.spb.sfgpetclinicdata.service.PetTypeService;
 
 import java.util.Set;
 

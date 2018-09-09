@@ -1,10 +1,10 @@
-package ru.spb.sfgpetclinic.service.map.impl;
+package ru.spb.sfgpetclinicdata.service.map.impl;
 
-import ru.spb.sfgpetclinic.data.BaseEntity;
+import ru.spb.sfgpetclinicdata.data.BaseEntity;
 
 import java.util.*;
 
-import static org.apache.commons.collections.CollectionUtils.*;
+import static org.apache.commons.collections.CollectionUtils.isEmpty;
 
 public abstract class AbstarctMapService<T extends BaseEntity, ID extends Long> {
 

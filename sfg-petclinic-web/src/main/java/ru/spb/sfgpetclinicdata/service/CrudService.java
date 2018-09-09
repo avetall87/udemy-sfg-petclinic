@@ -1,4 +1,4 @@
-package ru.spb.sfgpetclinic.service;
+package ru.spb.sfgpetclinicdata.service;
 
 import java.util.Set;
 

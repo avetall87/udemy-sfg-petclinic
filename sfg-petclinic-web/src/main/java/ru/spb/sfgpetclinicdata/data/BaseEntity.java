@@ -1,4 +1,4 @@
-package ru.spb.sfgpetclinic.data;
+package ru.spb.sfgpetclinicdata.data;
 
 import lombok.Getter;
 import lombok.Setter;
