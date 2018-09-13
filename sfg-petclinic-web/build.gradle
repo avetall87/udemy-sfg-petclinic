@@ -1,27 +1,35 @@
 buildscript {
     repositories {
-        mavenCentral()
-        jcenter()
-        maven { url 'http://repo.spring.io/libs-snapshot' }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath 'ro.isdc.wro4j.gradle:wro4j-gradle-plugin:1.8.0.Beta4'
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE'
+        classpath "gradle.plugin.com.github.voplex95:gradle-lesscompiler-plugin:1.0.3"
     }
 }
+
 
 plugins {
     id 'java'
 }
 
 apply plugin: 'application'
-apply plugin: 'wro4j'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'com.github.voplex95.lesscompiler'
+
+lessCompile {
+    source = file('src/main/less/petclinic.less')
+    target = file('src/main/resources/static/css')
+    compress = false
+}
+
 
 group 'ru.spb'
 version '0.0.1-SNAPSHOT'
 
 sourceCompatibility = 1.8
+
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
@@ -41,26 +49,3 @@ dependencies {
     runtime('org.springframework.boot:spring-boot-devtools')
 }
 
-webResources {
-    bundle ('core') {
-        js 'js/**/*.js'
-        preProcessor 'jsMin'
-    }
-
-    bundle ('libs') {
-        js 'webjars/jquery/jquery.min.js'
-    }
-
-    bundle ('theme-default') {
-        css 'webjars/bootstrap/less/bootstrap.less'
-        css 'themes/default/main.css'
-
-        cssOverrideImport 'variables.less', '../../../../themes/default/variables.less'
-        preProcessor 'less4j'
-        cssRewriteUrl()
-    }
-
-    assets {
-        include 'themes/default/images/**'
-    }
-}

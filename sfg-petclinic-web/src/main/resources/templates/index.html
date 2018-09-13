@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 <head>
     <meta charset="UTF-8">
     <title>Ветеренарная клиника</title>
 </head>
 <body>
-<h1 th:text="'Главная страница'">Mock !!!!</h1>
 
-<p>
-    <a href="/owners/">Владельцы</a>
-</p>
-<p>
-    <a href="/vets/">Ветеринары</a>
-</p>
+<!--<h2 th:text="#{welcome}">Welcome</h2>-->
+<div class="row">
+    <div class="col-md-12">
+        <img class="img-responsive" src="../static/images/pets.png" th:src="@{/images/pets.png}"/>
+    </div>
+</div>
+
 </body>
 </html>
