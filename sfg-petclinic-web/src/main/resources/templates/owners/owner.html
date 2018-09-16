@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" th:replace="~{fragments/layout :: layout (~{::body},'owners')}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Владельцы животных</title>
+    <style>
+        .th{
+          width: 150px;
+        }
+    </style>
 </head>
 <body>
-<h1 th:text="'Владельцы животных'">stub</h1>
-<p>
-    <a href="/">На главную</a>
-</p>
-<table>
+<h2 th:text="'Владельцы животных'">stub</h2>
+<table class="table table-striped">
     <thead>
     <tr>
-        <th>Идентифиатор</th>
-        <th>Фамилия</th>
-        <th>Имя</th>
+        <th class="th">Идентифиатор</th>
+        <th class="th">Фамилия</th>
+        <th class="th">Имя</th>
     </tr>
     </thead>
     <tbody>

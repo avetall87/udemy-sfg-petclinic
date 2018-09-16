@@ -47,7 +47,7 @@
                       <span>Home</span>
                   </li>
 
-                  <li th:replace="::menuItem ('/owners/find','owners','Владельцы животных','search','Владельцы')">
+                  <li th:replace="::menuItem ('/owners/','owners','Владельцы животных','search','Владельцы')">
                       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                       <span>Find owners</span>
                   </li>
@@ -67,14 +67,23 @@
       </div>
   </nav>
 
-<footer id="footer" class="footer" style="position:fixed; bottom:0; alignment: center">
-    <th:block th:include="${template}"/>
-        <div class="container">
-            <div class="col-12 text-center">
-                <img src="../../static/images/spring-pivotal-logo.png" th:src="@{/images/spring-pivotal-logo.png}" alt="Sponsored by Pivotal"/>
-            </div>
-        </div>
-</footer>
+  <div class="container container-details-table">
+      <th:block th:include="${template}"/>
+      <div class="container">
+          <div class="col-12 text-center">
+              <img src="../../static/images/spring-pivotal-logo.png" th:src="@{/images/spring-pivotal-logo.png}" alt="Sponsored by Pivotal"/>
+          </div>
+      </div>
+  </div>
+
+<!--<footer id="footer" class="footer" style="position:fixed; bottom:0; alignment: center">-->
+    <!--<th:block th:include="${template}"/>-->
+        <!--<div class="container">-->
+            <!--<div class="col-12 text-center">-->
+                <!--<img src="../../static/images/spring-pivotal-logo.png" th:src="@{/images/spring-pivotal-logo.png}" alt="Sponsored by Pivotal"/>-->
+            <!--</div>-->
+        <!--</div>-->
+<!--</footer>-->
 
   <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
   <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
