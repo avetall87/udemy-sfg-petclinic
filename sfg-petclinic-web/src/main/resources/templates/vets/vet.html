@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
     <meta charset="UTF-8">
     <title>Ветиренар</title>
 </head>
 <body>
-    <h1 th:text="'Ветеринары'">stub</h1>
-    <p>
-        <a href="/">На главную</a>
-    </p>
-    <table>
-        <thead>
+<h2 th:text="'Ветеринары'">stub</h2>
+
+<table id="vets" class="table table-striped">
+    <thead>
         <tr>
-            <th>Идентифиатор</th>
-            <th>Фамилия</th>
-            <th>Имя</th>
+            <th>№</th>
+            <th>ФИО ветеринара</th>
+            <th>Специализации</th>
         </tr>
-        </thead>
-        <tbody>
+    </thead>
+
+    <tbody>
         <tr th:each="vet : ${vets}">
-            <td th:text="${vet.id}"></td>
-            <td th:text="${vet.lastName}"></td>
-            <td th:text="${vet.firstName}"></td>
+            <td th:text="${vet.id}">0</td>
+            <td th:text="${vet.firstName + ' ' + vet.lastName}">неизвестно</td>
+            <td>
+                <span th:each="specialty : ${vet.specialties}" th:text="${specialty.name + ' '}"/>
+                <span th:if="${vet.nrOfSpecialties == 0}">неизвестно</span>
+            </td>
         </tr>
-        </tbody>
+    </tbody>
+</table>
 </body>
 </html>
