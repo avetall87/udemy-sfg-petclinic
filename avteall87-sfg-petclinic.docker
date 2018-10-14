@@ -1,0 +1,40 @@
+FROM ubuntu:18.04
+
+MAINTAINER avetall87 <avetall87@gmail.com>
+
+RUN apt-get upgrade -y && apt-get update -y
+
+# Install Java.
+RUN \
+  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+  apt-get install -y software-properties-common && \
+  apt-get install -y unzip && \
+  add-apt-repository -y ppa:webupd8team/java && \
+  apt-get update && \
+  apt-get install -y oracle-java8-installer && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/cache/oracle-jdk8-installer
+
+# Define commonly used JAVA_HOME variable
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+
+RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
+
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN java -version
+
+RUN echo We are ready to start: sfg-petclinic application !!!
+
+# Copy artifact to container
+COPY sfg-petclinic-web/build/distributions/sfg-petclinic-web-boot-0.0.1-SNAPSHOT.zip opt
+
+RUN cd opt && unzip sfg-petclinic-web-boot-0.0.1-SNAPSHOT.zip -d .
+
+#RUN cd opt && sh sfg-petclinic-web-boot-0.0.1-SNAPSHOT/bin/sfg-petclinic-web
+
+# Define default command.
+#CMD ["/bin/bash", "java -version"]
+
+EXPOSE 8080

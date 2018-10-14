@@ -1,10 +1,12 @@
 package ru.spb.sfgpetclinicdata.data;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PetType extends BaseEntity {
     private String name;
 }

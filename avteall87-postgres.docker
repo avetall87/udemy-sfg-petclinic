@@ -1,5 +1,0 @@
-FROM postgres:latest
-
-MAINTAINER avetall87 <avetall87@gmail.com>
-
-RUN apt-get upgrade && apt-get update

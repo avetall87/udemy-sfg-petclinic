@@ -10,9 +10,9 @@ import java.util.Set;
 @Getter
 @Setter
 public class Vet extends Person {
-    private Set<String> specialties;
+    private Set<Speciality> specialties;
 
-    protected Set<String> getSpecialtiesInternal() {
+    protected Set<Speciality> getSpecialtiesInternal() {
         if (this.specialties == null) {
             this.specialties = new HashSet<>();
         }
