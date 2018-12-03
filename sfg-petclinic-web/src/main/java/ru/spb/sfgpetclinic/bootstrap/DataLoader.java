@@ -10,6 +10,7 @@ import ru.spb.sfgpetclinicdata.data.PetType;
 import ru.spb.sfgpetclinicdata.data.Vet;
 import ru.spb.sfgpetclinicdata.service.OwnerService;
 import ru.spb.sfgpetclinicdata.service.PetService;
+import ru.spb.sfgpetclinicdata.service.PetTypeService;
 import ru.spb.sfgpetclinicdata.service.VetService;
 
 import java.time.LocalDateTime;
@@ -20,18 +21,34 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetService petService;
+    private final PetTypeService petTypeService;
 
     @Autowired
-    public DataLoader(OwnerService ownerService, VetService vetService, PetService petService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     @SneakyThrows
     public void run(String... args) {
+        loadPetType();
+        loadOwnersAndPets();
+        loadVet();
+    }
 
+    private void loadPetType() {
+        petTypeService.save(PetType.builder().name("Собака").build());
+        petTypeService.save(PetType.builder().name("Кошка").build());
+        petTypeService.save(PetType.builder().name("Птица").build());
+
+        System.out.println("Pet type is loaded !");
+
+    }
+
+    private void loadOwnersAndPets() {
         Owner ivanov = new Owner();
         ivanov.setId(1L);
         ivanov.setFirstName("Иван");
@@ -61,7 +78,9 @@ public class DataLoader implements CommandLineRunner {
         petService.save(cat);
 
         System.out.println("Pets is loaded !");
+    }
 
+    private void loadVet() {
         Vet sidorov = new Vet();
         sidorov.setId(1L);
         sidorov.setFirstName("Евгений");
@@ -77,6 +96,6 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(taburetkin);
 
         System.out.println("Vets is loaded !");
-
     }
+
 }
