@@ -19,6 +19,7 @@ apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'com.github.voplex95.lesscompiler'
 
+
 lessCompile {
     source = file('src/main/less/petclinic.less')
     target = file('src/main/resources/static/css')
@@ -29,7 +30,7 @@ lessCompile {
 group 'ru.spb'
 version '0.0.1-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.11
 
 
 dependencies {

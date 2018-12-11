@@ -20,12 +20,11 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
-
     mainClassName='ru.spb.sfgpetclinic.web.SfgPetclinicApplication'
-
-    bootJar {
+    
+    jar {
         manifest {
-            attributes 'Main-Class': 'ru.spb.sfgpetclinic.web.SfgPetclinicApplication'
+            attributes 'Main-Class' : 'ru.spb.sfgpetclinic.web.SfgPetclinicApplication'
         }
     }
 

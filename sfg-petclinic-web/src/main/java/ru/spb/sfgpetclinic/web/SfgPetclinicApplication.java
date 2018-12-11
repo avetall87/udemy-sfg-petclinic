@@ -8,7 +8,14 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(value = {"ru.spb"})
 public class SfgPetclinicApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+//        final BlockingQueue<String> q = new ArrayBlockingQueue<String>(1);
+//        String peek = q.peek();
+////        q.take();
+//
+//        final Semaphore semaphore = new Semaphore(1);
+//        semaphore.acquire();
         SpringApplication.run(SfgPetclinicApplication.class, args);
     }
 }

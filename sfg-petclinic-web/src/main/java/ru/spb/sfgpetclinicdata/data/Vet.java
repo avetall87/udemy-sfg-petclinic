@@ -10,13 +10,15 @@ import java.util.Set;
 @Getter
 @Setter
 public class Vet extends Person {
-    private Set<Speciality> specialties;
+    private volatile Set<Speciality> specialties;
 
     protected Set<Speciality> getSpecialtiesInternal() {
         if (this.specialties == null) {
-            this.specialties = new HashSet<>();
+            synchronized (Vet.class) {
+                this.specialties = new HashSet<>();
+            }
         }
-        return this.specialties;
+        return specialties;
     }
 
     public int getNrOfSpecialties() {
